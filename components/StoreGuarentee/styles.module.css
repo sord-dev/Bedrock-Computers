@@ -1,0 +1,25 @@
+.guarentee-list {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  opacity: 0.8;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.guarentee-icon {
+  background-color: rgba(26, 26, 26, 0.089);
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.guarentee-icon svg {
+  font-size: 1em;
+}
+
+.guarentee-icon p {
+  font-weight: 600;
+}

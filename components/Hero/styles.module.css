@@ -1,0 +1,77 @@
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  max-width: 94%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.content h1 {
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.hero img {
+  flex: 1;
+  max-width: 100%;
+  height: auto;
+}
+
+.content {
+  flex: 2;
+  margin-left: 40px;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 1em;
+  margin-top: 12px;
+}
+
+.inputGroup button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  min-width: 180px;
+}
+
+.inputGroup button.primary {
+  background-color: #0070f3;
+  color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero {
+    text-align: center;
+    padding: 24px;
+    justify-content: center;
+  }
+
+  .hero img {
+    margin: 0 auto;
+  }
+
+  .content {
+    margin: 24px auto;
+    max-width: 600px;
+  }
+
+  .inputGroup {
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 6px;
+  }
+
+  .inputGroup button {
+    flex: 0 0 100%;
+    margin-bottom: 12px;
+  }
+}

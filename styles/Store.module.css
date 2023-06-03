@@ -1,0 +1,48 @@
+.results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.store_partition {
+  display: flex;
+  margin-top: 24px;
+  gap: 12px;
+  border-radius: 6px;
+}
+
+.store_partition > div {
+  flex: 2;
+}
+
+.store_filter {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  height: 500px;
+}
+
+.store_filter div {
+  background-color: rgba(71, 71, 71, 0.253);
+  height: max-content;
+
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breadcrumb ul {
+  display: flex;
+  gap: 4px;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,103 @@
+/* StoreHome.module.css */
+.heroSection {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.heroSection h1 {
+  font-size: 2.5rem;
+  margin: 16px 0;
+}
+
+.heroDescription {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.nav {
+  margin-bottom: 40px;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+.nav li {
+  margin: 0 12px;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #f5955f;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: #ff814d;
+}
+
+.featuredSection {
+  margin-bottom: 40px;
+}
+
+.featuredSection h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  justify-items: center;
+}
+
+.infoSection {
+  margin-bottom: 40px;
+}
+
+.infoContent {
+  padding: 24px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.infoContent h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.infoContent p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav li {
+    margin: 0 8px;
+  }
+
+  .featuredSection h2 {
+    font-size: 1.5rem;
+  }
+
+  .productGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

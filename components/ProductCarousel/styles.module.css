@@ -1,0 +1,20 @@
+.productItem {
+  max-width: 200px;
+  cursor: pointer;
+}
+
+.productImage {
+  max-width: 160px;
+
+  margin: 0 auto;
+}
+
+.productImage img {
+  max-height: 220px;
+  width: 100%;
+}
+
+.productItem h5 {
+  color: green;
+  font-weight: 600;
+}

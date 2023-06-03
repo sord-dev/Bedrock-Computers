@@ -1,0 +1,25 @@
+.product_row {
+  display: flex;
+  gap: 2em;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .product_row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product_row > * {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .product_row > * {
+    max-width: 100%;
+  }
+}
