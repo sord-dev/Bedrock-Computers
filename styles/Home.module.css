@@ -6,6 +6,11 @@
   width: 100%;
 }
 
+.testimonials p {
+  width: 800px;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 768px) {
   .product_row {
     flex-wrap: wrap;
