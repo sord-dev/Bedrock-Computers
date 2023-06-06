@@ -12,6 +12,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .testimonials p {
+    width: auto;
+  }
+  
   .product_row {
     flex-wrap: wrap;
     justify-content: center;

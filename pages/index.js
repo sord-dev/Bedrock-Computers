@@ -17,7 +17,6 @@ const testimonials = [
   }
 ];
 
-
 export default function IndexPage() {
   return (
     <>

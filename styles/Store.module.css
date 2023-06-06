@@ -24,7 +24,8 @@
   height: 500px;
 }
 
-.store_filter div {
+.breadcrumb,
+.filters {
   background-color: rgba(71, 71, 71, 0.253);
   height: max-content;
 
@@ -45,4 +46,25 @@
 
 .breadcrumb a:hover {
   text-decoration: underline;
+}
+
+.rangeGroups {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  gap: 1em;
+}
+
+.rangeGroups button {
+  background-color: rgba(71, 71, 71, 0.253);
+  border: none;
+  font-weight: 600;
+
+  font-size: 0.9em;
+}
+
+.rangeGroups button.active {
+  background-color: #f5955f;
+  color: white;
 }
