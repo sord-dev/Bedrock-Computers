@@ -1,3 +1,8 @@
+.store_partition > div {
+  flex: 2;
+}
+
+/* CSS Styles */
 .results {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -6,65 +11,32 @@
 
 .store_partition {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 24px;
   gap: 12px;
   border-radius: 6px;
 }
 
-.store_partition > div {
-  flex: 2;
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .store_partition {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .store_partition > div {
+    flex: none;
+  }
+
+  .results {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    margin-top: 24px;
+  }
 }
 
-.store_filter {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-
-  height: 500px;
-}
-
-.breadcrumb,
-.filters {
-  background-color: rgba(71, 71, 71, 0.253);
-  height: max-content;
-
-  padding: 6px 12px;
-  border-radius: 4px;
-}
-
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.breadcrumb ul {
-  display: flex;
-  gap: 4px;
-}
-
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
-
-.rangeGroups {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0;
-  gap: 1em;
-}
-
-.rangeGroups button {
-  background-color: rgba(71, 71, 71, 0.253);
-  border: none;
-  font-weight: 600;
-
-  font-size: 0.9em;
-}
-
-.rangeGroups button.active {
-  background-color: #f5955f;
-  color: white;
+@media screen and (max-width: 480px) {
+  .results {
+    grid-template-columns: 1fr;
+  }
 }
