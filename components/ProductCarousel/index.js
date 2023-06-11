@@ -37,11 +37,9 @@ export const ProductCarousel = ({ products = [] }) => {
   );
 };
 
-export const Product = ({ href, image, name, price }) => {
-  const slug = name.toLowerCase().split(" ").join("-");
-
+export const Product = ({ image, name, price, id }) => {
   return (
-    <Link href={`/store/item/${href || slug}`}>
+    <Link href={`/store/item/${id}`}>
       <div className={styles.productItem}>
         <div className={styles.productImage}>
           <img src={image} draggable="false" />
