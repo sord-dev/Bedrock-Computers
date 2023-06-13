@@ -13,6 +13,11 @@ const StorePage = () => {
   const { products } = useProducts();
   const [priceRange, setPriceRange] = useState(null);
 
+  const selectPriceRange = (range) => {
+    if (priceRange == range) setPriceRange(null);
+    else setPriceRange(range);
+  };
+
   return (
     <div className={"content-container"}>
       <StoreGuarentee />
@@ -21,7 +26,7 @@ const StorePage = () => {
         <Filters
           ranges={RANGES}
           priceRange={priceRange}
-          setRange={setPriceRange}
+          setRange={selectPriceRange}
         />
 
         <ProductList products={products} />

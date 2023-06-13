@@ -52,6 +52,18 @@
   color: white;
 }
 
+.filterHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filterBox {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
 @media screen and (max-width: 768px) {
   .filters {
     display: none;
