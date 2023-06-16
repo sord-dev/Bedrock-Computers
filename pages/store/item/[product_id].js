@@ -12,7 +12,6 @@ const StorePage = () => {
 
   useEffect(() => {
     const product = getProduct(product_id);
-
     if (product) setCurrentProduct(product);
   }, []);
 

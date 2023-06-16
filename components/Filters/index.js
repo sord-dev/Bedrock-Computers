@@ -1,31 +1,32 @@
 import Link from "next/link";
 import useBreadcrumb from "../../hooks/useBreadcrum";
+import { MainFilters } from "./mainFilters";
 import styles from "./styles.module.css";
 
-export const Filters = ({
-  priceRange,
-  ranges,
-  setRange = (range) => {
-    console.log(range);
-  },
-}) => {
+export const Filters = ({ priceRange, ranges, filterControls = {} }) => {
   return (
     <aside className={styles.store_filter}>
       <BreadCrumb />
 
-      <div className={styles.rangeGroups}>
-        {ranges.map((r) => (
-          <button
-            className={r.range == priceRange ? styles.active : ""}
-            onClick={() => setRange(r.range)}
-          >
-            {r.label}
-          </button>
-        ))}
-      </div>
+      <PriceRanges {...{ ranges, priceRange, filterControls }} />
 
-      <div className={styles.filters}>main item filters</div>
+      <MainFilters {...{ filterControls }} />
     </aside>
+  );
+};
+
+const PriceRanges = ({ ranges, priceRange, filterControls }) => {
+  return (
+    <div className={styles.rangeGroups}>
+      {ranges.map((r) => (
+        <button
+          className={r.range == priceRange?.range ? styles.active : ""}
+          onClick={() => filterControls?.selectPriceRange(r)}
+        >
+          {r.label}
+        </button>
+      ))}
+    </div>
   );
 };
 
