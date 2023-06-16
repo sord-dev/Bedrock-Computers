@@ -4,7 +4,7 @@ const TEMP_PRODUCTS = [
     image:
       "https://bedrock-computers.co.uk/wp-content/uploads/2023/04/DiamondLabels-600x800.jpg",
     name: "PC-1",
-    price: 999.99,
+    price: 313.99,
     category: "Desktop",
     brand: "Brand-1",
     processor: "Processor-1",
@@ -49,7 +49,7 @@ const TEMP_PRODUCTS = [
     image:
       "https://bedrock-computers.co.uk/wp-content/uploads/2023/04/StormtrooperLabels-1023x1365.jpg",
     name: "PC-4",
-    price: 899.99,
+    price: 500.99,
     category: "Desktop",
     brand: "Brand-4",
     processor: "Processor-4",
@@ -64,7 +64,7 @@ const TEMP_PRODUCTS = [
     image:
       "https://bedrock-computers.co.uk/wp-content/uploads/2023/04/SaharaF4Labels-1023x1365.jpg",
     name: "PC-5",
-    price: 1799.99,
+    price: 350.99,
     category: "Desktop",
     brand: "Brand-5",
     processor: "Processor-5",
@@ -94,7 +94,7 @@ const TEMP_PRODUCTS = [
     image:
       "https://bedrock-computers.co.uk/wp-content/uploads/2023/04/BlazeBlueLabels-300x400.jpg",
     name: "PC-7",
-    price: 1599.99,
+    price: 430.99,
     category: "Desktop",
     brand: "Brand-7",
     processor: "Processor-7",

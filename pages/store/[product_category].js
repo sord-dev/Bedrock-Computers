@@ -1,22 +1,41 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useProducts } from "../../contexts/products";
 import { Filters, Product, StoreGuarentee } from "../../components";
 import styles from "../../styles/Store.module.css";
 
 const RANGES = [
-  { label: "Entry Level", range: [100, 400] },
-  { label: "Mid Range", range: [400, 600] },
-  { label: "High End", range: [600, 800] },
+  { label: "Entry Level", range: [0, 400] },
+  { label: "Mid Range", range: [400, 675] },
+  { label: "High End", range: [675, 2000] },
 ];
 
 const StorePage = () => {
   const { products } = useProducts();
+  const [result, setResult] = useState([]);
   const [priceRange, setPriceRange] = useState(null);
 
   const selectPriceRange = (range) => {
     if (priceRange == range) setPriceRange(null);
     else setPriceRange(range);
   };
+
+  const clearFilters = () => {
+    setPriceRange(null);
+  };
+
+  useEffect(() => {
+    if (!priceRange) setResult(products);
+    else {
+      let filtered = products.filter((p) => {
+        return (
+          Math.round(p.price) >= priceRange.range[0] &&
+          Math.round(p.price) <= priceRange.range[1]
+        );
+      });
+      console.log(filtered);
+      setResult(filtered);
+    }
+  }, [priceRange]);
 
   return (
     <div className={"content-container"}>
@@ -26,10 +45,10 @@ const StorePage = () => {
         <Filters
           ranges={RANGES}
           priceRange={priceRange}
-          setRange={selectPriceRange}
+          filterControls={{ selectPriceRange, clearFilters }}
         />
 
-        <ProductList products={products} />
+        <ProductList products={result} />
       </section>
     </div>
   );

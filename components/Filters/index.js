@@ -1,65 +1,31 @@
 import Link from "next/link";
 import useBreadcrumb from "../../hooks/useBreadcrum";
+import { MainFilters } from "./mainFilters";
 import styles from "./styles.module.css";
 
-export const Filters = ({
-  priceRange,
-  ranges,
-  setRange = (range) => {
-    console.log(range);
-  },
-}) => {
+export const Filters = ({ priceRange, ranges, filterControls = {} }) => {
   return (
     <aside className={styles.store_filter}>
       <BreadCrumb />
 
-      <div className={styles.rangeGroups}>
-        {ranges.map((r) => (
-          <button
-            className={r.range == priceRange?.range ? styles.active : ""}
-            onClick={() => setRange(r)}
-          >
-            {r.label}
-          </button>
-        ))}
-      </div>
+      <PriceRanges {...{ ranges, priceRange, filterControls }} />
 
-      <div className={styles.filters}>
-        <div className={styles.filter}>
-          <div className={styles.filterHead}>
-            <h3>Filters</h3>
-
-            <button>Reset</button>
-          </div>
-          <div>
-            <FilterCheckbox label="On Sale Items" />
-            <FilterCheckbox label="In Stock" />
-            <FilterCheckbox label="On Backorder" />
-          </div>
-        </div>
-
-        <div className={styles.filter}>
-          <div className={styles.filterHead}>
-            <h3>Category</h3>
-
-            <p>Hide</p>
-          </div>
-
-          <div>
-            <FilterCheckbox label="On Sale Items" />
-            <FilterCheckbox label="In Stock" />
-            <FilterCheckbox label="On Backorder" />
-          </div>
-        </div>
-      </div>
+      <MainFilters {...{ filterControls }} />
     </aside>
   );
 };
 
-const FilterCheckbox = ({ label = "No label provided", checked = false }) => {
+const PriceRanges = ({ ranges, priceRange, filterControls }) => {
   return (
-    <div className={styles.filterBox}>
-      <input type="checkbox" checked={checked} /> <p>{label}</p>
+    <div className={styles.rangeGroups}>
+      {ranges.map((r) => (
+        <button
+          className={r.range == priceRange?.range ? styles.active : ""}
+          onClick={() => filterControls?.selectPriceRange(r)}
+        >
+          {r.label}
+        </button>
+      ))}
     </div>
   );
 };
